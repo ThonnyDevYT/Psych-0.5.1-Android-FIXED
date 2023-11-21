@@ -577,65 +577,79 @@ class TitleState extends MusicBeatState
 			switch (sickBeats)
 			{
 				case 1:
-					#if PSYCH_WATERMARKS
-					createCoolText(['Psych Engine by'], 15);
-					#else
-					createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
-					#end
+					//FlxG.sound.music.stop();
+				//	FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
+				if (ClientPrefs.data.musicstate != 'disabled') {
+						FlxG.sound.playMusic(Paths.music('Hallucination'), 0);
+					//FlxG.sound.playMusic(Paths.music(ClientPrefs.data.musicstate), 0);
+				}
+				if (ClientPrefs.data.musicstate != 'disabled')	FlxG.sound.music.fadeIn(2, 0, 1.2);
+				case 2:
+					addMoreText('Ending Corruption by');
+					//createCoolText(['Psych Engine by'], 40);
+					//createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
 				// credTextShit.visible = true;
-				case 3:
-					#if PSYCH_WATERMARKS
-					addMoreText('Shadow Mario', 15);
-					addMoreText('RiverOaken', 15);
-					addMoreText('bb-panzu', 15);
-					#else
+				case 4:
+					addMoreText('ThonnyDev');
 					addMoreText('present');
-					#end
+					if (ClientPrefs.data.musicstate != 'disabled')	FlxG.sound.music.volume = 1.2;
 				// credTextShit.text += '\npresent...';
 				// credTextShit.addText();
-				case 4:
+				case 5:
 					deleteCoolText();
 				// credTextShit.visible = false;
 				// credTextShit.text = 'In association \nwith';
 				// credTextShit.screenCenter();
-				case 5:
-					#if PSYCH_WATERMARKS
-					createCoolText(['Not associated', 'with'], -40);
-					#else
-					createCoolText(['In association', 'with'], -40);
-					#end
+				case 6:
+					addMoreText('Not associated with');
+					//createCoolText(['Not associated', 'with'], -40);
+					//createCoolText(['In association', 'with'], -40);
+					ngSpr.visible = false;
+					phantomSr.visible = true;
 				case 7:
-					addMoreText('newgrounds', -40);
-					ngSpr.visible = true;
-				// credTextShit.text += '\nNewgrounds';
-				case 8:
 					deleteCoolText();
 					ngSpr.visible = false;
+					if (ClientPrefs.data.musicstate != 'disabled')	FlxG.sound.music.volume = 1.2;
 				// credTextShit.visible = false;
 
 				// credTextShit.text = 'Shoutouts Tom Fulp';
 				// credTextShit.screenCenter();
-				case 9:
-					createCoolText([curWacky[0]]);
+				case 8:
+					addMoreText(curWacky[0]);
 				// credTextShit.visible = true;
-				case 11:
+				case 9:
 					addMoreText(curWacky[1]);
 				// credTextShit.text += '\nlmao';
-				case 12:
+				case 10:
 					deleteCoolText();
 				// credTextShit.visible = false;
 				// credTextShit.text = "Friday";
 				// credTextShit.screenCenter();
-				case 13:
+				case 11:
 					addMoreText('Friday');
+					if (ClientPrefs.data.musicstate != 'disabled')	FlxG.sound.music.volume = 1.2;
 				// credTextShit.visible = true;
-				case 14:
+				case 12:
 					addMoreText('Night');
 				// credTextShit.text += '\nNight';
-				case 15:
+				case 13:
 					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
-
+				case 14:
+					deleteCoolText();
+				//credTextShit.visible = false;
+				//credTextShit.text = "Friday";
+				//credTextShit.screenCenter();
+				case 15:
+					addMoreText('Ending');
+					if (ClientPrefs.data.musicstate != 'disabled')	FlxG.sound.music.volume = 1.2;
 				case 16:
+					addMoreText('Corruption');
+				case 17:
+					addMoreText('V' + 'Android');
+				case 18:
+				case 19:
+					deleteCoolText();
+				case 20:
 					skipIntro();
 			}
 		}
