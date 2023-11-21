@@ -66,7 +66,7 @@ class Main extends Sprite
 		var stageWidth:Int = Lib.current.stage.stageWidth;
 		var stageHeight:Int = Lib.current.stage.stageHeight;     
 
-		ClientPrefs.data.loadDefaultKeys();
+		ClientPrefs.loadDefaultKeys();
 		SUtil.doTheCheck();
 		addChild(new FlxGame(game.width, game.height, game.initialState, #if (flixel < "5.0.0") game.zoom, #end game.framerate, game.framerate, game.skipSplash, game.startFullscreen));
 
