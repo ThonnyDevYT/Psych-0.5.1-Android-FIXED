@@ -579,11 +579,9 @@ class TitleState extends MusicBeatState
 				case 1:
 					//FlxG.sound.music.stop();
 				//	FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
-				if (ClientPrefs.data.musicstate != 'disabled') {
 						FlxG.sound.playMusic(Paths.music('Hallucination'), 0);
 					//FlxG.sound.playMusic(Paths.music(ClientPrefs.data.musicstate), 0);
-				}
-				if (ClientPrefs.data.musicstate != 'disabled')	FlxG.sound.music.fadeIn(2, 0, 1.2);
+					FlxG.sound.music.fadeIn(2, 0, 1.2);
 				case 2:
 					addMoreText('Ending Corruption by');
 					//createCoolText(['Psych Engine by'], 40);
@@ -592,7 +590,6 @@ class TitleState extends MusicBeatState
 				case 4:
 					addMoreText('ThonnyDev');
 					addMoreText('present');
-					if (ClientPrefs.data.musicstate != 'disabled')	FlxG.sound.music.volume = 1.2;
 				// credTextShit.text += '\npresent...';
 				// credTextShit.addText();
 				case 5:
@@ -605,11 +602,9 @@ class TitleState extends MusicBeatState
 					//createCoolText(['Not associated', 'with'], -40);
 					//createCoolText(['In association', 'with'], -40);
 					ngSpr.visible = false;
-					phantomSr.visible = true;
 				case 7:
 					deleteCoolText();
 					ngSpr.visible = false;
-					if (ClientPrefs.data.musicstate != 'disabled')	FlxG.sound.music.volume = 1.2;
 				// credTextShit.visible = false;
 
 				// credTextShit.text = 'Shoutouts Tom Fulp';
@@ -627,7 +622,6 @@ class TitleState extends MusicBeatState
 				// credTextShit.screenCenter();
 				case 11:
 					addMoreText('Friday');
-					if (ClientPrefs.data.musicstate != 'disabled')	FlxG.sound.music.volume = 1.2;
 				// credTextShit.visible = true;
 				case 12:
 					addMoreText('Night');
@@ -641,7 +635,6 @@ class TitleState extends MusicBeatState
 				//credTextShit.screenCenter();
 				case 15:
 					addMoreText('Ending');
-					if (ClientPrefs.data.musicstate != 'disabled')	FlxG.sound.music.volume = 1.2;
 				case 16:
 					addMoreText('Corruption');
 				case 17:
@@ -663,7 +656,7 @@ class TitleState extends MusicBeatState
 		{
 			remove(ngSpr);
 
-			FlxG.camera.flash(FlxColor.WHITE, 4);
+			FlxG.camera.flash(FlxColor.BLACK, 4);
 			remove(credGroup);
 			skippedIntro = true;
 		}
